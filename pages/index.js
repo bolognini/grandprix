@@ -16,19 +16,27 @@ const Index = () => {
   const [list, setList] = useState(null)
   const [order, setOrder] = useState('asc')
   const [error, setError] = useState(null)
+  const [behavior, setBehavior] = useState({
+    show: false
+  }) 
 
   const getList = (event, year, round) => {
     event.preventDefault()
-    return fetch(`http://ergast.com/api/f1/${year}/${round}/results.json`)
+    return fetch(`http://ergast.com/api/f1/${year}/${round}/results.json`,
+    Headers = {
+      'Access-Control-Allow-Origin': 'http://ergast.com/api/*'
+    })
       .then(res => res.json())
       .then(res => {
         setList(res.MRData.RaceTable.Races[0].Results)
         setRace(res.MRData.RaceTable.Races[0].raceName)
         setUrl(res.MRData.RaceTable.Races[0].Circuit.url)
+        setBehavior({show: false})
         return res
       })
       .catch((error) => {
         setError(true)
+        setBehavior({show: true})
         console.error(`Error: ${error}`)
       })
   }
@@ -46,6 +54,7 @@ const Index = () => {
   return (
     <Layout>
       <PageHolder>
+        <ErrorMessage message={error} behavior={behavior} />
         <PageTitle title='iCarros' subtitle='Digite o ano e a etapa da Fórmula 1 para checar os resultados! ;)'/>
         <SearchField raceList={getList} />
         {list &&
@@ -57,7 +66,6 @@ const Index = () => {
             }>
           </ResultText>
         }
-        {error && <ErrorMessage message={error} />}
         {list &&
           <Menu
             position={

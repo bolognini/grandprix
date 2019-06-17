@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react'
-import { Message } from './ErrorMessage.style'
+import { Message, MessageBox } from './ErrorMessage.style'
 
-const ErrorMessage = ({ message }) => {
+const ErrorMessage = ({ message, behavior }) => {
   return (
     <Fragment>
       {message &&
+      <MessageBox behavior={behavior}>
         <Message>
-          Não conseguimos trazer seu resultado :( <br />
-          Os campos de ano e etapa devem ser números
-          Por favor, confira se os dados digitados estão corretos.
+          Algo deu errado! Por favor, cheque se os valores estão corretos.
         </Message>
+      </MessageBox>
       }
     </Fragment>
   )
