@@ -25,11 +25,11 @@ export const CardWrapper = styled.div`
   }
 `
 
-export const Position = styled.p`
+export const Position = styled.span`
   text-align: left;
 `
 
-export const RacerNumber = styled.p`
+export const RacerNumber = styled.span`
   text-align: center;
 
   ${breakpoint.mobile} {
@@ -37,18 +37,18 @@ export const RacerNumber = styled.p`
   }
 `
 
-export const Nationality = styled.p`
+export const Nationality = styled.span`
   text-align: left;
 `
 
-export const Name = styled.p`
+export const Name = styled.span`
   text-align: center;
 `
 
-export const Vehicle = styled.p`
+export const Team = styled.span`
   text-align: center;
 `
 
-export const Points = styled.p`
+export const Points = styled.span`
   text-align: right;
 `

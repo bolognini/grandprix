@@ -16,9 +16,7 @@ const Index = () => {
   const [list, setList] = useState(null)
   const [order, setOrder] = useState('asc')
   const [error, setError] = useState(null)
-  const [behavior, setBehavior] = useState({
-    show: false
-  }) 
+  const [behavior, setBehavior] = useState({ show: false }) 
 
   const getList = (event, year, round) => {
     event.preventDefault()
@@ -81,11 +79,17 @@ const Index = () => {
         {list &&
           list.map(racer =>
             <Card
+              key={racer.Driver.driverId}
               position={racer.position}
               number={racer.number}
               nationality={racer.Driver.nationality}
-              name={`${racer.Driver.givenName.substring(0, 1)}. ${racer.Driver.familyName}`}
-              vehicle={racer.Constructor.name}
+              name={
+                <Link href={racer.Driver.url}>
+                  <a target='_blank'>{`${racer.Driver.givenName.substring(0, 1)}. ${racer.Driver.familyName}`}</a>
+                </Link>
+              }
+              url={racer.Driver.url}
+              team={racer.Constructor.name}
               points={racer.points}
             />
           )}

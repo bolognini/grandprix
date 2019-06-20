@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import reset from 'styled-reset'
 import { lighten } from 'polished'
@@ -16,8 +16,8 @@ const theme = {
 }
 
 export const breakpoint = {
-  mobile: `@media only screen and (min-device-width: 320px) and (max-device-width: 736px)`,
-  tablet: `@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)`,
+  mobile: `@media only screen and (min-width: 320px) and (max-width: 767px)`,
+  tablet: `@media only screen and (min-width: 768px) and (max-width: 1024px)`,
 }
 
 export const GlobalStyle = createGlobalStyle`

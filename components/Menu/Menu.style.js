@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { breakpoint } from '../Layout'
 
-export const MenuWrapper = styled.nav`
+export const MenuWrapper = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
@@ -32,8 +32,6 @@ export const MenuWrapper = styled.nav`
         position: absolute;
         top: 8px;
         left: 70px;
-        width: 0px;
-        height: 0px;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
       }
@@ -68,26 +66,26 @@ export const MenuWrapper = styled.nav`
   }
 `
 
-export const Position = styled.p`
+export const Position = styled.li`
   text-align: left;
 `
 
-export const RacerNumber = styled.p`
+export const RacerNumber = styled.li`
   text-align: center;
 `
 
-export const Nationality = styled.p`
+export const Nationality = styled.li`
   text-align: left;
 `
 
-export const Name = styled.p`
+export const Name = styled.li`
   text-align: center;
 `
 
-export const Vehicle = styled.p`
+export const Vehicle = styled.li`
   text-align: center;
 `
 
-export const Points = styled.p`
+export const Points = styled.li`
   text-align: right;
 `
