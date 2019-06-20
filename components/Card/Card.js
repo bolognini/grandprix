@@ -1,21 +1,22 @@
 import React from 'react'
+import Link from 'next/link'
 import {
   CardWrapper,
   Position,
   Nationality,
   Name,
-  Vehicle,
+  Team,
   RacerNumber,
   Points
 } from './Card.style'
 
-const Card = ({ position, number, nationality, name, vehicle, points }) => {
+const Card = ({ position, number, nationality, name, team, points }) => {
   return (
     <CardWrapper>
       <Position>{position}</Position>
       <Nationality>{nationality}</Nationality>
-      <Name>{name}</Name>
-      <Vehicle>{vehicle}</Vehicle>
+      <Name target='_blank'>{name}</Name>
+      <Team>{team}</Team>
       <RacerNumber>#{number}</RacerNumber>
       <Points>{points} pts</Points>
     </CardWrapper>

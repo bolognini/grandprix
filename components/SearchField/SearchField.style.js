@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoint } from '../Layout'
 
 export const SearchFieldWrapper = styled.form`
   display: flex;
@@ -6,6 +7,11 @@ export const SearchFieldWrapper = styled.form`
   padding-top: ${props => props.padding === 'padding' ? '5vh' : '20vh'};
   padding-bottom: 24px;
   transition: 0.5s ease-in;
+
+  ${breakpoint.mobile} {
+    padding-top: ${props => props.padding === 'padding' ? '5vh' : '10vh'};
+    padding-bottom: 32px;
+  }
 `
 
 export const Input = styled.input`
@@ -23,6 +29,10 @@ export const Input = styled.input`
   &:focus {
     border-bottom-color: ${props => props.theme.hoverToryBlue};
     transition: 0.2s ease-in;
+  }
+
+  ${breakpoint.mobile} {
+    width: 125px;
   }
 `
 
@@ -42,5 +52,9 @@ export const Button = styled.button`
   svg {
     width: 15px;
     fill: white;
+  }
+
+  ${breakpoint.mobile} {
+    padding: 0 10px;
   }
 `

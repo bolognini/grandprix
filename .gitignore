@@ -6,6 +6,7 @@
 /out
 /build
 /.next-export
+
 # misc
 .DS_Store
 npm-debug.log*
