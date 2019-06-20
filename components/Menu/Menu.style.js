@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoint } from '../Layout'
 
 export const MenuWrapper = styled.nav`
   display: grid;
@@ -24,7 +25,7 @@ export const MenuWrapper = styled.nav`
     font-weight: lighter;
     cursor: pointer;
 
-    &[data-active='asc'] {
+    &[data-active='asc'], &[data-active='desc'] {
       &::after {
         display: inline;
         content: '';
@@ -35,22 +36,33 @@ export const MenuWrapper = styled.nav`
         height: 0px;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
+      }
+    }
+
+    &[data-active='asc'] {
+      &::after {
         border-top: 5px solid #2f2f2f;
       }
     }
 
     &[data-active='desc'] {
       &::after {
-        display: inline;
-        content: '';
-        position: absolute;
-        top: 8px;
-        left: 70px;
-        width: 0px;
-        height: 0px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
         border-bottom: 5px solid #2f2f2f;
+      }
+    }
+  }
+
+  ${breakpoint.mobile} {
+    padding: 24px 16px;
+    font-size: 14px;
+
+    button {
+      font-size: 14px;
+
+      &[data-active='asc'], &[data-active='desc'] {
+        &::after {
+          left: -8px;
+        }
       }
     }
   }

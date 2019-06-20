@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoint } from '../Layout'
 
 export const MessageBox = styled.div`
   width: 40%;
@@ -7,7 +8,7 @@ export const MessageBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: ${props => props.behavior.show ? '0px' : '-56px' };
   transition: .3s ease-in;
   z-index: 3;
@@ -16,6 +17,17 @@ export const MessageBox = styled.div`
   border-bottom-left-radius: 6px;
   padding: 16px;
   transition: top 0.2s;
+
+  ${breakpoint.mobile} {
+    width: 75%;
+    font-size: 14px;
+    top: ${props => props.behavior.show ? '0px' : '-95px' };
+  }
+  
+  ${breakpoint.tablet} {
+    width: 75%;
+    top: ${props => props.behavior.show ? '0px' : '-80px' };
+  }
 `
 
 export const Message = styled.p`
