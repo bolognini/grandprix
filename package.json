@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "next",
+    "test": "jest",
     "build": "next build && next export",
     "start": "serve ./out"
   },
@@ -18,6 +19,13 @@
     "react-dom": "^16.8.6",
     "styled-components": "^4.3.1",
     "styled-reset": "^2.0.15"
+  },
+  "devDependencies": {
+    "@babel/core": "7.3.4",
+    "babel-jest": "24.1.0",
+    "jest": "24.1.0",
+    "jest-dom": "^3.1.3",
+    "@testing-library/react": "latest"
   },
   "license": "ISC"
 }
